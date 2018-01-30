@@ -9,7 +9,7 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 	npm install
 	npm run start
 
-...and open your browser at [localhost:3000](localhost:3000) to launch the app!
+...and open your browser at [localhost:3000](http://localhost:3000) to launch the app!
 
 ## Known issues
 
