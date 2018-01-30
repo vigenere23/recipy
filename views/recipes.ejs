@@ -1,0 +1,11 @@
+<div class="wrapper recipes">
+	<div class="content">
+		<% for (let i = 0; i < recipes.length; i++) { %>
+			<% var image_path = "/images/" + recipes[i].image_name + ".jpg"; %>
+			<a class="card" href="/recipes/<%= recipes[i].recipe_name %>" data-image-url="<%= image_path %>">
+				<p><%= recipes[i].recipe_title %></p>
+			</a>
+		<% } %>
+	</div>
+</div>
+<%- include('partials/new_recipe_button') %>

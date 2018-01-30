@@ -1,0 +1,83 @@
+<%
+var fractions = [
+	"",
+	"1/2",
+	"1/3",
+	"2/3",
+	"1/4",
+	"3/4"
+];
+var mesures = [
+	"",
+	"cup",
+	"oz",
+	"lb",
+	"mL",
+	"L",
+	"g",
+	"kg",
+	"tsp",
+	"Tbsp"
+];
+%>
+
+<div class="wrapper form">
+	<div class="content">
+		<form method="post" enctype="multipart/form-data">
+			<div class="input-section">
+				<div class="input-wrapper">
+					<label for="name">Name</label>
+					<% var classname = ""; %>
+					<% var value = (locals.recipe_title) ? locals.recipe_title : ""; %>
+					<% if(locals.invalid_name) classname = "error-invalid-name"; %>
+					<% if(locals.name_already_taken) classname = "error-name-already-taken"; %>
+					<input type="text" name="recipe_title" class="<%= classname %>" value="<%= value %>" placeholder="Recipe's name" maxlength="75" required>
+				</div>
+			</div>
+			<div class="input-section">
+				<label>Ingredients</label>
+				<ul class="expander ingredients">
+					<% var ingredients_length = (locals.ingredients) ? ingredients.length : 1; %>
+					<% for(let i = 0; i < ingredients_length; i++) { %>
+						<% var quantity_value = (locals.ingredients) ? ingredients[i].quantity : ""; %>
+						<% var fraction_value = (locals.ingredients) ? ingredients[i].fraction : ""; %>
+						<% var mesure_value = (locals.ingredients) ? ingredients[i].mesure : ""; %>
+						<% var name_value = (locals.ingredients) ? ingredients[i].name : ""; %>
+						<% var name_class = (locals.invalid_ingredient == i) ? "name error-invalid-name" : "name"; %>						
+						<li id="<%= i %>" class="input-wrapper">
+							<input class="quantity" type="number" name="ingredients[<%= i %>][quantity]" value="<%= quantity_value %>" min="0" max="999">
+							<select class="fraction" name="ingredients[<%= i %>][fraction]">
+								<% for (let j = 0; j < fractions.length; j++) { %>
+									<option value="<%= fractions[j] %>" <% if (fraction_value == fractions[j]) { %>selected<% } %>><%= fractions[j] %></option>
+								<% } %>
+							</select>
+							<select class="mesure" name="ingredients[<%= i %>][mesure]">
+								<% for (let j = 0; j < mesures.length; j++) { %>
+									<option value="<%= mesures[j] %>" <% if (mesure_value == mesures[j]) { %>selected<% } %>><%= mesures[j] %></option>
+								<% } %>
+							</select>
+							<input class="<%= name_class %>" type="text" name="ingredients[<%= i %>][name]" value="<%= name_value %>" placeholder="Ingredient" maxlength="40" required>
+						</li>
+					<% } %>
+				</ul>
+			</div>
+			<div class="input-section">
+				<label>Steps</label>
+				<ul class="expander steps">
+					<% var steps_length = (locals.steps) ? steps.length : 1; %>
+					<% for(let i = 0; i < steps_length; i++) { %>
+						<% var step_value = (locals.steps) ? steps[i] : ""; %>
+						<% var step_class = (locals.invalid_step == i) ? "error-invalid-name" : ""; %>
+						<li id="<%= i %>" class="input-wrapper">
+							<input class="<%= step_class %>" type="text" name="steps[<%= i %>]" value="<%= step_value %>" placeholder="Step" required>
+						</li>
+					<% } %>
+				</ul>
+			</div>
+			<div class="input-section">
+				<input type="file" name="picture" accept=".jpg">
+			</div>
+			<button class="flat" type="submit">Send</button>
+		</form>
+	</div>
+</div>
