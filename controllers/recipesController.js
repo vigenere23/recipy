@@ -161,7 +161,7 @@ exports.edit_post = function(req, res) {
 		}
 
 		// Check if recipe title respects the regex pattern
-		if (!(Validator(recipe_title).checkIfText())) {
+		if (!(Validator(recipe_title).checkIfText()) || recipe_name == "default") {
 			rendering_options.invalid_name = true;
 			has_errors = true;
 		}
@@ -266,7 +266,7 @@ exports.new_post = function(req, res) {
 		}
 
 		// Check if recipe title respects the regex pattern
-		if (!(Validator(recipe_title).checkIfText())) {
+		if (!(Validator(recipe_title).checkIfText()) || recipe_name == "default") {
 			rendering_options.invalid_name = true;
 			has_errors = true;
 		}

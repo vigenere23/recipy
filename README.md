@@ -13,8 +13,8 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 
 ## Known issues
 
-- Specific names are not blocked (ex: default, favicon, etc.)
 - Should watch for max lengths
+- Should remake the error system (maybe an object return from validator checks)
 
 ## Future
 
@@ -22,4 +22,3 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 - A database for storing recipes and users
 - Recipes sorting (by date, cooking time, price, ingredients, etc.)
 - Who knows...
-
