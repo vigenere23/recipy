@@ -161,7 +161,7 @@ exports.edit_post = function(req, res) {
 		}
 
 		// Check if recipe title respects the regex pattern
-		if (!(Validator(recipe_title).checkIfText()) || recipe_name == "default") {
+		if (!(Validator(recipe_title).checkIfText()) || new_recipe_name == "default") {
 			rendering_options.invalid_name = true;
 			has_errors = true;
 		}
@@ -190,12 +190,15 @@ exports.edit_post = function(req, res) {
 		// Everything in order, delete or rename sold image if needed
 		if (new_recipe_name != old_recipe_name) {
 			var old_image_path = './public/images/' + old_recipe_name + '.jpg';
-			if (req.file) {
-				fs.unlinkSync(old_image_path);
-			}
-			else {
-				var new_image_path = './public/images/' + new_recipe_name + '.jpg';				
-				fs.renameSync(old_image_path, new_image_path);
+			
+			if (fs.existsSync(old_image_path)) {
+				if (req.file) {
+					fs.unlinkSync(old_image_path);
+				}
+				else {
+					var new_image_path = './public/images/' + new_recipe_name + '.jpg';				
+					fs.renameSync(old_image_path, new_image_path);
+				}
 			}
 		}
 		

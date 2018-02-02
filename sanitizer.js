@@ -1,21 +1,3 @@
-/*if (!(String.prototype.capitalize)) {
-	String.prototype.capitalize = function() {
-		return this.charAt(0).toUpperCase() + this.slice(1);
-	}
-}
-
-if (!(String.prototype.toLispCase)) {
-	String.prototype.toSnakeCase = function() {
-		return this.replace(/ /g, "_").toLowerCase();
-	}
-}
-
-if (!(String.prototype.toNormalCase)) {
-	String.prototype.toNormalCase = function() {
-		return this.replace(/_/g, " ");
-	}
-}*/
-
 var Validator = require('./validator');
 
 function Sanitizer(element) {
