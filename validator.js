@@ -25,7 +25,7 @@ Validator.prototype.checkIfPositive = function checkIfPositive() {
 
 Validator.prototype.checkIfText = function checkIfText() {
 	var unicode_letters = "\u00E0\u00E2\u00E9\u00E8\u00EA\u00F4\u00EB\u00EF\u00E7\u00F1\u00FB\u0153";
-	var exp = new RegExp("^([.,\(\)a-z" + unicode_letters + "]+|[0-9]+)(((\\s|-|')[.,\(\)a-z" + unicode_letters + "]+)|((\\s|-|')[0-9]+))*$", "iu");
+	var exp = new RegExp("^([\.,\\(\\)a-z" + unicode_letters + "]+|[0-9]+)(((\\s|-|')[\.,\\(\\)a-z" + unicode_letters + "]+)|((\\s|-|')[0-9]+))*$", "iu");
 	return(exp.test(this.element));
 };
 
