@@ -222,9 +222,11 @@ exports.edit_post = function(req, res) {
 
 // GET new recipe form
 exports.new = function(req, res) {
+	var recipe_title = req.params.recipe_name ? Sanitizer(req.params.recipe_name).toNormalCase().element : "";
 	res.render("layout.ejs", {
 		page_title: "New recipe",
-		inner_page: "recipe_form"
+		inner_page: "recipe_form",
+		recipe_title: recipe_title
 	});
 };
 

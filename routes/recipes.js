@@ -23,9 +23,11 @@ var recipes_controller = require("../controllers/recipesController");
 router.get('/', recipes_controller.index);
 
 // GET request for new recipe.
+router.get('/new/:recipe_name', recipes_controller.new);
 router.get('/new', recipes_controller.new);
 
 // POST request for new recipe.
+router.post('/new/:recipe_name', upload.single("picture"), recipes_controller.new_post);
 router.post('/new', upload.single("picture"), recipes_controller.new_post);
 
 // GET request for recipe.
