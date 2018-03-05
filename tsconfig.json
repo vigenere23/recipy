@@ -1,0 +1,9 @@
+{
+	"compileOnSave": true, // if supported (atom, visualStudio)
+	"compilerOptions": {
+		"outDir": "./scripts/compiled"
+	},
+	"include": [
+		"scripts/*.ts"
+	]
+}
