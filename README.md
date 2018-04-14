@@ -21,4 +21,5 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 - A user system
 - A database for storing recipes and users
 - Recipes sorting (by date, cooking time, price, ingredients, etc.)
+- A complete true MVC solution
 - Who knows...
