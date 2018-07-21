@@ -21,5 +21,9 @@
   },
   "devDependencies": {
     "nodemon": "^1.14.11"
-  }
+  },
+  "main": "index.js",
+  "repository": "http://github.com/vigenere23/recipy",
+  "author": "vigenere23 <lolgab1@hotmail.com>",
+  "license": "MIT"
 }
