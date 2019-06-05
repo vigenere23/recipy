@@ -23,3 +23,5 @@ Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 - Recipes sorting (by date, cooking time, price, ingredients, etc.)
 - A complete true MVC solution
 - Who knows...
+
+> See [Recipy2](https://github.com/vigenere23/Recipy2) and [Cooky](https://github.com/vigenere23/GLO-2005_Cooky) for updated versions. 
