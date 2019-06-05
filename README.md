@@ -6,8 +6,8 @@ Save your recipes in this beautiful reciope catalog!
 
 Make sure you have installed [Node.js](https://nodejs.org/en/) and run :
 
-	npm install
-	npm run start
+	yarn install
+	yarn start
 
 ...and open your browser at [localhost:3000](http://localhost:3000) to launch the app!
 
